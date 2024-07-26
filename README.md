@@ -1,16 +1,16 @@
-### DOWNLOAD THE DATA: `download\_wget\_bash.csh`
+### DOWNLOAD THE DATA: `download_wget_bash.csh`
 
 csh script to download data from FRF website; uncomment and adjust what you need
 
-### EXTRACT WAVE DATA: `nc\_to\_dat.py`
+### EXTRACT WAVE DATA: `nc_to_dat.py`
 
 Python script to extract the wave data from the NetCDF files of the FRF and generate a text file with the date, hs, tp, dir and level. 
 
 It can be adapted to resample the hourly original data into daily data, with or without interpolation.
 
-Change the name of the final file at the end of the script. Here it generated `forcing\_duck_daily\_8m\_1990-2022.dat`.
+Change the name of the final file at the end of the script. Here it generated `forcing_duck_daily_8m_1990-2022.dat`.
 
-### ANALYSE WAVE DATA: `waves\_statistics.py`
+### ANALYSE WAVE DATA: `waves_statistics.py`
 
 Python script that analyse the timeseries and plot the following figures:
 - Figure 1: timeseries of Hs and Tp
@@ -25,11 +25,11 @@ Python script that analyse the timeseries and plot the following figures:
 
 Run the script and follow the questions asked, answering by yes (y) or no (n).
 
-The line 519 allows to save the analysis, here in `stats\_wavesduck\_daily\_8m\_1990-2022.csv`.  
+The line 519 allows to save the analysis, here in `stats_wavesduck_daily_8m_1990-2022.csv`.  
 
-### ANALYSE, DETECT, SHORELINE/BARS: `morpho\_evolution.py`
+### ANALYSE, DETECT, SHORELINE/BARS: `morpho_evolution.py`
 
-Python script to analyse the bathymetries, extract the shoreline position, detect bars and extract their position, height, width. Works with `duck\_configuration.yaml` and functions in `libs` directory.
+Python script to analyse the bathymetries, extract the shoreline position, detect bars and extract their position, height, width. Works with `duck_configuration.yaml` and functions in `libs` directory.
 
 The following list explains where to modify the script and why:
 
