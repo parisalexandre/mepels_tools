@@ -1,3 +1,4 @@
+## PREPROCESSING
 ### DOWNLOAD THE DATA: `download_wget_bash.csh`
 
 csh script to download data from FRF website; uncomment and adjust what you need
@@ -25,7 +26,7 @@ Python script that analyse the timeseries and plot the following figures:
 
 Run the script and follow the questions asked, answering by yes (y) or no (n).
 
-The line 519 allows to save the analysis, here in `stats_wavesduck_daily_8m_1990-2022.csv`.  
+The line 519 allows to save the analysis, here in `stats_waves_duck_daily_8m_1990-2022.csv`.  
 
 ### ANALYSE, DETECT, SHORELINE/BARS: `morpho_evolution.py`
 
@@ -56,3 +57,19 @@ The following list explains where to modify the script and why:
 - if you want to save the data, comment/uncomment the corresponding lines at the end of the script;
 
 - the script generated `evolution_bars_frag_thornton_2000-2022.csv`, `evolution_bars_height.csv` and `evolution_bars_width.csv`.
+
+## RECONSTRUCTION OF A NEW PROFILE
+### `reconstruction.py`
+
+Python script to add a bar to an existing bathymetric profile, and to change the shoreline position after a ShoreFor study.
+
+The script modifiy an existing profile, here `mean_profile_duck_2000-2022.txt`. This file contains two columns, x cross-shore coordinates and elevation z.
+
+Change the bar dimensions lines 43 (height), 44 (position) and 45 (width), and the shoreline position line 47. Adapt the HTL (high tide value) to your study line 49. 
+
+The new profile is saved in a file .dep ready for XBeach, here `bed_w90_06122019.dep`, line 111.
+
+## PREPARATION FOR XBEACH
+### DYNAMIC ANALYSIS WITH `events_detection.py`
+
+This Python script determines for each day if the dynamic is supposed to be accretion, erosion or equilibrium, plot a figure showing this dynamic variation and saves the results in a file, here `dynamic_omegas_duck2019_daily.csv`.
