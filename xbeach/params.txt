@@ -1,0 +1,120 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% XBeach parameter settings input file                                     %%%
+%%%                                                                          %%%
+%%% date:     09-Sep-2011 09:45:52                                           %%%
+%%% function: xb_write_params                                                %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Grid parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+depfile   = ../bathy_2019-02-01.dep
+posdwn    = 0
+nx        = 133
+ny        = 0
+alfa      = 0
+vardx     = 1
+xfile     = ../x.grd
+yfile     = ../y.grd
+xori      = 0
+yori      = 0
+thetamin  = -90
+thetamax  = 90
+dtheta    = 10
+thetanaut = 0
+
+%%% Initial conditions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+tideloc   = 1
+zs0file   = ../tide_2019_entire.txt
+
+bermslopetransport = 1
+bermslopesus = 1
+bermslope = 0.1
+bermslopegamma = 0.7
+bermslopefac = 30
+
+%%% Model time %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+tstop     = 0
+
+%%% Wave boundary condition parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+instat     = stat_table
+
+%%% Wave-spectrum boundary condition parameters %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+bcfile     = ../wave_2019_entire.txt
+
+%%% Wave breaking %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+break	     = roelvink2
+gamma        = 0.55
+alpha	     = 1.0
+delta	     = 0.0
+n	     = 10.0
+
+varbeta      = 1
+beta 	     = 0.03
+
+%%% Wave shape model %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+waveform = vanthiel
+
+%%% Bed friction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+bedfriction  = chezy
+bedfriccoef  = 55.0
+smag	     = 0
+
+%%% Sediment transport %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+form 	     = vanthiel_vanrijn
+Tsmin	     = 0.5
+cmax         = 0.1
+d50	     = 0.0002
+rhos         = 2650
+
+%%% Morphology %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+morfac	     = 10.0
+wetslp	     = 0.3
+dryslp	     = 1.0
+facua        = 0.15
+
+%%% General %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sedtrans     = 1
+morphology   = 1
+wavemodel    = surfbeat
+fw           = 0.15
+cfl	     = 0.6
+%cyclic 	     = 1
+
+%%% Output variables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+tstart       = 0
+tintg        = 3600
+tintm	     = 3600
+outputformat = netcdf
+nglobalvar   = 4
+zb
+x
+y
+zs
+
+nmeanvar = 16
+zs
+u
+v
+H
+urms
+As
+Sk
+ue
+ve
+hh
+k
+Sutot
+Svtot
+cctot
+cx
+cgx
