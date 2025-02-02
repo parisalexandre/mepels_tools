@@ -834,16 +834,15 @@ def bars_dimensions(coords_crests, coords_troughs, long_shore, fig, gs):
             bars = bars.drop(columns=['crest_1', 'trough_1', 'z_crest_1',
                                       'z_trough_1', 'h_bar_1', 'w_bar_1'])
     
-    ############################################
-    # Set bar = Thornton. If positive -> no bar
-    #if x_breaking < 0:
-    #    bars['crest_1'] = x_breaking
-    #    nb_bar = 1
-    #else:
-    #    if 'crest_1' in bars:
-    #        bars = bars.drop(columns=['crest_1', 'trough_1', 'z_crest_1',
-    #                                  'z_trough_1', 'h_bar_1', 'w_bar_1'])
-    #    nb_bar = 0
+    # If x_breaking positive -> on the beach -> no bar
+    if x_breaking < 0:
+        bars['crest_1'] = x_breaking
+        nb_bar = 1
+    else:
+        if 'crest_1' in bars:
+            bars = bars.drop(columns=['crest_1', 'trough_1', 'z_crest_1',
+                                      'z_trough_1', 'h_bar_1', 'w_bar_1'])
+        nb_bar = 0
     
     ###########################
     # PLOT DIMENSIONS OF BARS #
