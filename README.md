@@ -69,7 +69,12 @@ Change the bar dimensions lines 43 (height), 44 (position) and 45 (width), and t
 
 The new profile is saved in a file .dep ready for XBeach, here `bed_w90_06122019.dep`, line 111.
 
-## PREPARATION FOR XBEACH
+## XBEACH
 ### DYNAMIC ANALYSIS WITH `events_detection.py`
 
-This Python script determines for each day if the dynamic is supposed to be accretion, erosion or equilibrium, plot a figure showing this dynamic variation and saves the results in a file, here `dynamic_omegas_duck2019_daily.csv`.
+This Python script (in `preprocessing`) determines for each day if the dynamic is supposed to be accretion, erosion or equilibrium, plot a figure showing this dynamic variation and saves the results in a file, here `dynamic_omegas_duck2019_daily.csv`.
+
+### A few files are necessary to launch xbeach in sequences:
+- `x.grd` and `y.grd`, the cross-shore and longshore coordinates in m, respectively;
+
+- `tide_2019_entire.txt` and `wave_2019_entire.txt`, the files with the daily tides and waves
