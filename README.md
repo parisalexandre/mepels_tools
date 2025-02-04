@@ -77,4 +77,24 @@ This Python script (in `preprocessing`) determines for each day if the dynamic i
 ### A few files are necessary to launch xbeach in sequences:
 - `x.grd` and `y.grd`, the cross-shore and longshore coordinates in m, respectively;
 
-- `tide_2019_entire.txt` and `wave_2019_entire.txt`, the files with the daily tides and waves
+- `tide_2019_entire.txt` and `wave_2019_entire.txt`, the files with the daily tides and waves;
+
+- `params.txt`, the configuration file for XBeach;
+
+- `bathy_2019-02-01.dep.save`, the bathymetry file. Before to launch the sequence, copy this file without the save extension;
+
+- `dynamic_omegas_duck_2019_daily.csv`, the dynamic file previously obtained;
+
+- `concat_xboutput.py`, a script to concatenate the XBeach outputs into a unique output file;
+
+- `launch_xbeach.oar`, the bash script to launch XBeach in a cluster (adapt to your cluster job scheduler);
+
+- `script_xbeach_sequences.py`, the principal Python script. Make sure to modify the following lines:
+	- line 23: name of the dynamic file
+	- lines 51,52,107,109: names of the tide and wave files
+	- lines 63,64: the date
+	- line 81: name of the bathymetry file
+	- line 119: adapt to your cluster job scheduler
+	- line 163,166 the first and last value of the bathymetry file
+
+Once all your files are ready, copy the bathymetry file without the save extension, and launch the script. It will create a directory for each sequence identified in the dynamic file, then copy the parameters, bathymetry, coordinates, tides and waves files in the directory and launch XBeach on your cluster. When all the simulations are complete, use `concat_xboutput.py`.
