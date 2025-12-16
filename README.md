@@ -69,6 +69,20 @@ Change the bar dimensions lines 43 (height), 44 (position) and 45 (width), and t
 
 The new profile is saved in a file .dep ready for XBeach, here `bed_w90_06122019.dep`, line 111.
 
+### `reconstruction_with_stats.py`
+
+Same script for reconstruction but using statistics on the bar height and width.
+
+Change the values of mean Hs for each month in `hs_month` line 44.
+
+Replace `evolution_bars_height.csv` line 67 and `evolution_bars_width` line 69 by your files. They must contain a column for time and a column with the dimension of the bar.
+
+In the dictionary `results` line 80, you can change the dates of your profiles, the values of the mean Hs the week before the profiles `hs_7`, and the results of ShoreFor: the position of the shoreline `shoreline` and the bar `pos`.
+
+Adapt the HTL line 95. Change the date line 114.
+
+The new profiles are saved lines 182 and 183.
+
 ## XBEACH
 ### DYNAMIC ANALYSIS WITH `events_detection.py`
 
